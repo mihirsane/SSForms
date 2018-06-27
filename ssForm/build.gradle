@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven'
 
 group = 'it.starksoftware'
-version = '1.2.0'
+version = '1.2.0-custom'
 
 ext {
     bintrayRepo = 'maven'
@@ -14,10 +14,10 @@ ext {
 
     libraryDescription = 'SSForms is Android library to create dynamic Recyclerview forms'
 
-    siteUrl = 'https://github.com/StarkSoftware/SSForms'
-    gitUrl = 'https://github.com/StarkSoftware/SSForms.git'
+    siteUrl = 'https://github.com/mihirsane/SSForms'
+    gitUrl = 'https://github.com/mihirsane/SSForms.git'
 
-    libraryVersion = '1.2.0'
+    libraryVersion = '1.2.0-custom'
 
 
     licenseName = 'The Apache Software License, Version 2.0'
@@ -34,7 +34,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 3
-        versionName "1.2.0"
+        versionName "1.2.0-custom"
     }
 
     dataBinding {
