@@ -37,7 +37,7 @@
             app:buttonBackgroundColor="@color/colorAccent"
             app:buttonTextColor="@color/white"
             app:textBackgroundColor="@android:color/darker_gray"
-            app:textColor="@color/white"
+            app:switcherTextColor="@color/white"
             app:textSize="18sp" />
 
 
