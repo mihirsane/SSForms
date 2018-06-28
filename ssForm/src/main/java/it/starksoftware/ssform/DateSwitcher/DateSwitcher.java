@@ -59,7 +59,7 @@ public class DateSwitcher extends LinearLayout implements View.OnClickListener {
         try {
             btnColor = ta.getColor(R.styleable.DateSwitcher_buttonTextColor, getResources().getColor(R.color.white));
             btnBackgroundColor = ta.getColor(R.styleable.DateSwitcher_buttonBackgroundColor, getResources().getColor(R.color.btnBackgroundColorDefault));
-            textColor = ta.getColor(R.styleable.DateSwitcher_textColor, getResources().getColor(R.color.black));
+            textColor = ta.getColor(R.styleable.DateSwitcher_switcherTextColor, getResources().getColor(R.color.black));
             textBackgroundColor = ta.getColor(R.styleable.DateSwitcher_textBackgroundColor, getResources().getColor(R.color.white));
             textSize = ta.getDimension(R.styleable.DateSwitcher_textSize, 18 * 3);
         } finally {
