@@ -3,6 +3,9 @@ package it.starksoftware.ssform.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.starksoftware.ssform.interfaces.FormElementCallBack;
+import it.starksoftware.ssform.interfaces.SpinnerCallBack;
+
 
 public class FormElement implements FormObject {
 
@@ -29,6 +32,7 @@ public class FormElement implements FormObject {
     private String mValue; // value to be shown on right
     private List<String> mOptions; // list of options for single and multi picker
     private List<String> mOptionsSelected; // list of selected options for single and multi picker
+    private FormElementCallBack mFormElementCallback;
 
     private boolean required = false;
     private String requiredResponseMessage = mTitle;
@@ -133,7 +137,14 @@ public class FormElement implements FormObject {
         return (mOptionsSelected == null) ? new ArrayList<String>() : mOptionsSelected;
     }
 
+    public FormElement setCallback(FormElementCallBack callback) {
+        this.mFormElementCallback = callback;
+        return this;
+    }
 
+    public FormElementCallBack getCallback() {
+        return mFormElementCallback;
+    }
 
     @Override
     public boolean isHeader() {

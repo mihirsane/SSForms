@@ -192,7 +192,6 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     }
 
     public void hideElement(FormObject formObject) {
-
         this.mDataset.remove(formObject);
     }
 
@@ -2163,6 +2162,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                         }
                         editText.setText(s);
                         ((FormElement) mDataset.get(position)).setValue(s);
+                        ((FormElement) mDataset.get(position)).getCallback().callbackFormElement((FormElement) mDataset.get(position),((FormElement) mDataset.get(position)).getTag());
                         notifyItemChanged(clickedPosition);
                     }
                 })
