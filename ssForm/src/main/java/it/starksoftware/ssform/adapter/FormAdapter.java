@@ -2153,14 +2153,17 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         String s = "";
+                        ArrayList<String> selectedList = new ArrayList<String>();
                         for (int i = 0; i < mSelectedItems.size(); i++) {
                             s += options[mSelectedItems.get(i)];
 
                             if (i < mSelectedItems.size() - 1) {
                                 s += ", ";
                             }
+                            selectedList.add(String.valueOf(options[mSelectedItems.get(i)]));
                         }
                         editText.setText(s);
+                        ((FormElement) mDataset.get(position)).setOptionsSelected(selectedList);
                         ((FormElement) mDataset.get(position)).setValue(s);
                         ((FormElement) mDataset.get(position)).getCallback().callbackFormElement((FormElement) mDataset.get(position),((FormElement) mDataset.get(position)).getTag());
                         notifyItemChanged(clickedPosition);
