@@ -124,6 +124,8 @@ import it.starksoftware.ssform.view.GridSpacingItemDecoration;
 import rx.Observable;
 import rx.functions.Action1;
 
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+
 public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
     // defining marker for header view
@@ -827,7 +829,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -895,7 +897,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -918,7 +920,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -963,7 +965,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -979,7 +981,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -996,7 +998,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1031,7 +1033,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1047,7 +1049,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1062,7 +1064,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1123,7 +1125,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1163,7 +1165,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1187,7 +1189,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1203,7 +1205,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 } else {
 
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1253,7 +1255,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 } else {
 
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1274,7 +1276,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1299,7 +1301,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1323,7 +1325,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
@@ -1363,7 +1365,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     holder.linearLayout.setLayoutParams(params);
                 } else {
                     ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-                    params.height = -2;
+                    params.height = -1;
                     holder.linearLayout.setLayoutParams(params);
                 }
             }
