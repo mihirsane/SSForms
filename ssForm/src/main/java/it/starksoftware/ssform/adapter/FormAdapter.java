@@ -814,24 +814,23 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     setSingleOptionsDialog(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_PICKER_MULTI_CHECKBOX:
-                    holder.mEditTextValue.setMaxLines(Integer.MAX_VALUE);
                     setMultipleOptionsDialog(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 default:
                     break;
             }
 
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
 
         } else if (getItemViewType(position) == IS_INPUT_LAYOUT) {
             FormElementInputLayout formElement = (FormElementInputLayout) currentObject;
@@ -883,24 +882,23 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     setSingleOptionsDialogInputLayout(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_PICKER_MULTI_CHECKBOX:
-                    holder.mEditTextValue.setMaxLines(Integer.MAX_VALUE);
                     setMultipleOptionsDialogInputLayout(holder.editText, position, holder.layoutRow);
                     break;
                 default:
                     break;
             }
 
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
 
         } else if (getItemViewType(position) == IS_SWITCH_VIEW) {
             final FormElementSwitch formElement = (FormElementSwitch) currentObject;
@@ -913,17 +911,17 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     formElement.setValue(isChecked);
                 }
             });
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_SEGMENT_VIEW) {
             final FormElementSegment formElement = (FormElementSegment) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
@@ -958,50 +956,50 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 }
             });
 
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_IMAGE_VIEW) {
             FormElementImageView formElement = (FormElementImageView) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
             holder.mEditImageViewValue.setImageBitmap(formElement.getValue());
             setImagePicker(holder.mEditImageViewValue, position, holder.layoutRow);
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_PROFILE_VIEW) {
             FormElementProfileView formElement = (FormElementProfileView) currentObject;
             holder.formElementProfileName.setText(formElement.getProfileName());
             if (formElement.getProfileImage() != null)
                 holder.circleImageView.setImageBitmap(formElement.getProfileImage());
             setImageProfilePicker(holder.circleImageView, position, holder.layoutRow);
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_TOKEN) {
             final FormElementToken formElement = (FormElementToken) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
@@ -1014,60 +1012,60 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             }
             setTokenPicker(holder.btnAddTokens, position, formElement);
 
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_SIGNATURE_VIEW) {
             FormElementSignature formElement = (FormElementSignature) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
             holder.mEditImageViewValue.setImageBitmap(formElement.getValue());
             setSignaturePicker(holder.mEditImageViewValue, position, holder.layoutRow);
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_PLACE_DIALOG_VIEW) {
             FormElementPlaceDialog formElement = (FormElementPlaceDialog) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
             holder.mTextViewValue.setText(formElement.getValue());
             setPlaceDialogPicker(holder.mTextViewValue, position, holder.layoutRow, formElement);
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_MEMO_VIEW) {
             FormElementMemo formElement = (FormElementMemo) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
             holder.mEditMemoTextValue.setText(formElement.getValue());
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_SMILE_RATING) {
             final FormElementSmileRating formElement = (FormElementSmileRating) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
@@ -1118,17 +1116,17 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     }
                 }
             });
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_DATE_SWITCHER) {
             final FormElementDateSwitcher formElement = (FormElementDateSwitcher) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
@@ -1158,17 +1156,17 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             holder.mTextViewTitle.setText(formElement.getTitle());
             holder.mTextViewAttachValue.setText(formElement.getValue());
             setAttachPicker(holder.mTextViewAttachValue, position, holder.layoutRow);
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_RATING_VIEW) {
             final FormElementRating formElement = (FormElementRating) currentObject;
             final RatingCallBack ratingCallBack = formElement.getRatingCallBack();
@@ -1182,33 +1180,33 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     ratingCallBack.callbackRatingReturn(rating);
                 }
             });
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_SEARCHABLE_SPINNER_VIEW) {
             final FormElementSearchableSpinner formElement = (FormElementSearchableSpinner) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
             holder.mTextViewDetail.setText(formElement.getValue());
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
             setSearchableSpinnerView(holder.mTextViewDetail, position, holder.layoutRow, formElement);
 
 
@@ -1247,18 +1245,18 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 }
             });
 
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
 
         } else if (getItemViewType(position) == IS_MULTIPLEIMAGE_VIEW) {
             FormElementImageMultipleView formElement = (FormElementImageMultipleView) currentObject;
@@ -1269,17 +1267,17 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             holder.mEditImageViewMultipleValue.setItemAnimator(new DefaultItemAnimator());
             holder.mEditImageViewMultipleValue.setAdapter(formElement.getImgAdapter());
             setImagePickerMultiple(holder.btnAdd, position, formElement.getMaxImages(), holder.layoutRow);
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_CHECKBOX_VIEW) {
             final FormElementCheckBox formElement = (FormElementCheckBox) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
@@ -1294,17 +1292,17 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     }
                 });
             }
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_CUSTOM_KEYBOARD) {
             final FormElementCustomKeyboard formElement = (FormElementCustomKeyboard) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
@@ -1317,18 +1315,18 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 }
             });
             formElement.getmKeyboard().registerEditText(holder.mEditTextValue, formElement);
-//
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
         } else if (getItemViewType(position) == IS_DATE_TIME) {
             final FormElementDateTime formElement = (FormElementDateTime) currentObject;
             holder.mTextViewTitle.setText(formElement.getTitle());
@@ -1358,17 +1356,17 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     break;
             }
 
-//            if (holder.linearLayout.getLayoutParams() != null) {
-//                if (!formElement.getVisibility()) {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = 0;
-//                    holder.linearLayout.setLayoutParams(params);
-//                } else {
-//                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
-//                    params.height = -2;
-//                    holder.linearLayout.setLayoutParams(params);
-//                }
-//            }
+            if (holder.linearLayout.getLayoutParams() != null) {
+                if (!formElement.getVisibility()) {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = 0;
+                    holder.linearLayout.setLayoutParams(params);
+                } else {
+                    ViewGroup.LayoutParams params = holder.linearLayout.getLayoutParams();
+                    params.height = -2;
+                    holder.linearLayout.setLayoutParams(params);
+                }
+            }
 
         }
     }
