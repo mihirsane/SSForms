@@ -814,6 +814,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     setSingleOptionsDialog(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 case FormElement.TYPE_PICKER_MULTI_CHECKBOX:
+                    holder.mEditTextValue.setMaxLines(Integer.MAX_VALUE);
                     setMultipleOptionsDialog(holder.mEditTextValue, position, holder.layoutRow);
                     break;
                 default:
@@ -882,6 +883,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     setSingleOptionsDialogInputLayout(holder.editText, position, holder.layoutRow);
                     break;
                 case FormElementInputLayout.TYPE_PICKER_MULTI_CHECKBOX:
+                    holder.mEditTextValue.setMaxLines(Integer.MAX_VALUE);
                     setMultipleOptionsDialogInputLayout(holder.editText, position, holder.layoutRow);
                     break;
                 default:
