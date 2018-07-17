@@ -273,7 +273,6 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 FormElementSpinner formElement = (FormElementSpinner) f;
                 if (formElement.getTag() == tag) {
                     formElement.setValue(value);
-                    formElement.getCallback().callbackSpinnerReturn(value,tag,null);
                     return;
                 }
             }
