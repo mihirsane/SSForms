@@ -19,7 +19,7 @@
         android:fontFamily="sans-serif-thin"
         android:gravity="center_vertical"
         android:text="ffdsfwe"
-        android:textColor="#000000"
+        android:textColor="@color/colorFormMasterElementTextValue"
         android:textSize="16sp"
         android:textStyle="bold" />
 

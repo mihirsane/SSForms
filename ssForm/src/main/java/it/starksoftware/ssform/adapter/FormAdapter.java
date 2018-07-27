@@ -1115,7 +1115,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                             break;
 
 
-                            
+
                     }
                 }
             });
@@ -1930,9 +1930,9 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
     private void setDateTimePickerTextView(final TextView textView, final int position, final LinearLayout layoutRow, final FormElementDateTime formElementDateTime) {
         final SwitchDateTimeDialogFragment dateTimeFragment;
         dateTimeFragment = SwitchDateTimeDialogFragment.newInstance(
-                "Impostazione Data e Ora",
-                "Conferma",
-                "Annulla"
+                "Set Date and Time",
+                "Ok",
+                "Cancel"
         );
 
         dateTimeFragment.set24HoursMode(true);
