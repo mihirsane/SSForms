@@ -2003,9 +2003,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
 
                 if (clickedPosition >= 0) {
-                    ((FormElementDateTime) mDataset.get(clickedPosition)).setValue(date);
-                    notifyItemChanged(clickedPosition);
-                    clickedPosition = -1;
+                    ((FormElementDateTime) mDataset.get(position)).setValue(date);
+                    notifyItemChanged(position);
                     dateTimeCallBack.callbackDateTimeReturn(date, formElementDateTime, formElementDateTime.getTag());
                 }
 
@@ -2033,7 +2032,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             @Override
             public void onClick(View view) {
                 clickedPosition = position;
-                dateTimeFragment.setDefaultDateTime(((FormElementDateTime) mDataset.get(clickedPosition)).getDefaultDate());
+                dateTimeFragment.setDefaultDateTime(((FormElementDateTime) mDataset.get(position)).getDefaultDate());
                 dateTimeFragment.show(fManager, "TAG_DATETIME_FRAGMENT");
             }
         });
@@ -2042,7 +2041,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             @Override
             public void onClick(View view) {
                 clickedPosition = position;
-                dateTimeFragment.setDefaultDateTime(((FormElementDateTime) mDataset.get(clickedPosition)).getDefaultDate());
+                dateTimeFragment.setDefaultDateTime(((FormElementDateTime) mDataset.get(position)).getDefaultDate());
                 dateTimeFragment.show(fManager, "TAG_DATETIME_FRAGMENT");
             }
         });
