@@ -1338,6 +1338,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     if (formElement.getValue() != null) {
                         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
                         holder.mTextViewValue.setText(dateFormat.format(formElement.getValue()));
+                    }else{
+                        holder.mTextViewValue.setText("");
                     }
                     setDatePickerTextView(holder.mTextViewValue, position, holder.layoutRow, formElement.getMinDate(), formElement.getMaxDate());
                 break;
@@ -1345,6 +1347,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     if (formElement.getValue() != null) {
                         DateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
                         holder.mTextViewValue.setText(dateFormat.format(formElement.getValue()));
+                    }else{
+                        holder.mTextViewValue.setText("");
                     }
                     setTimePickerTextView(holder.mTextViewValue, position, holder.layoutRow);
                 break;
@@ -1352,6 +1356,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     if (formElement.getValue() != null) {
                         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
                         holder.mTextViewValue.setText(dateFormat.format(formElement.getValue()));
+                    }else{
+                        holder.mTextViewValue.setText("");
                     }
                     setDateTimePickerTextView(holder.mTextViewValue, position, holder.layoutRow, formElement);
                 break;
@@ -2002,7 +2008,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             public void onPositiveButtonClick(Date date) {
 
 
-                if (clickedPosition >= 0) {
+                if (position >= 0) {
                     ((FormElementDateTime) mDataset.get(position)).setValue(date);
                     notifyItemChanged(position);
                     dateTimeCallBack.callbackDateTimeReturn(date, formElementDateTime, formElementDateTime.getTag());
