@@ -1331,7 +1331,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 }
             }
         } else if (getItemViewType(position) == IS_DATE_TIME) {
-            final FormElementDateTime formElement = (FormElementDateTime) currentObject;
+            FormElementDateTime formElement = (FormElementDateTime) mDataset.get(position);
             holder.mTextViewTitle.setText(formElement.getTitle());
             switch (formElement.getType()) {
                 case FormElementDateTime.TYPE_PICKER_DATE:
@@ -1340,21 +1340,21 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                         holder.mTextViewValue.setText(dateFormat.format(formElement.getValue()));
                     }
                     setDatePickerTextView(holder.mTextViewValue, position, holder.layoutRow, formElement.getMinDate(), formElement.getMaxDate());
-                    break;
+                break;
                 case FormElementDateTime.TYPE_PICKER_TIME:
                     if (formElement.getValue() != null) {
                         DateFormat dateFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
                         holder.mTextViewValue.setText(dateFormat.format(formElement.getValue()));
                     }
                     setTimePickerTextView(holder.mTextViewValue, position, holder.layoutRow);
-                    break;
+                break;
                 case FormElementDateTime.TYPE_PICKER_DATE_TIME:
                     if (formElement.getValue() != null) {
                         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault());
                         holder.mTextViewValue.setText(dateFormat.format(formElement.getValue()));
                     }
                     setDateTimePickerTextView(holder.mTextViewValue, position, holder.layoutRow, formElement);
-                    break;
+                break;
                 default:
                     break;
             }
@@ -1783,12 +1783,35 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
     private void setDatePickerTextView(final TextView textView, final int position, final LinearLayout layoutRow, final Date minDate, final Date maxDate) {
 
+//        final DatePickerDialog.OnDateSetListener dateSetListener =
+
+
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clickedPosition = position;
+//                clickedPosition = position;
                 DatePickerDialog datePickerDialog = new DatePickerDialog(mContext,
-                        dateTextView,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                mCalendarCurrentDate.set(Calendar.YEAR, year);
+                                mCalendarCurrentDate.set(Calendar.MONTH, monthOfYear);
+                                mCalendarCurrentDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                                String myFormatDate = "dd/MM/yy"; // custom format
+                                SimpleDateFormat sdfDate = new SimpleDateFormat(myFormatDate, Locale.US);
+
+                                // act only if clicked position is a valid index
+                                if (position >= 0) {
+                                    ((FormElementDateTime) mDataset.get(position)).setValue(mCalendarCurrentDate.getTime());
+                                    notifyItemChanged(position);
+//                                    clickedPosition = -1;
+                                }
+
+
+                            }
+
+                        },
                         mCalendarCurrentDate.get(Calendar.YEAR),
                         mCalendarCurrentDate.get(Calendar.MONTH),
                         mCalendarCurrentDate.get(Calendar.DAY_OF_MONTH));
@@ -1800,15 +1823,39 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                     datePickerDialog.getDatePicker().setMinDate(minDate.getTime());
 
                 datePickerDialog.show();
+
+
+
+
             }
         });
 
         layoutRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clickedPosition = position;
+//                clickedPosition = position;
                 DatePickerDialog datePickerDialog = new DatePickerDialog(mContext,
-                        dateTextView,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                mCalendarCurrentDate.set(Calendar.YEAR, year);
+                                mCalendarCurrentDate.set(Calendar.MONTH, monthOfYear);
+                                mCalendarCurrentDate.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+
+                                String myFormatDate = "dd/MM/yy"; // custom format
+                                SimpleDateFormat sdfDate = new SimpleDateFormat(myFormatDate, Locale.US);
+
+                                // act only if clicked position is a valid index
+                                if (position >= 0) {
+                                    ((FormElementDateTime) mDataset.get(position)).setValue(mCalendarCurrentDate.getTime());
+                                    notifyItemChanged(position);
+                                    clickedPosition = -1;
+                                }
+
+
+                            }
+
+                        },
                         mCalendarCurrentDate.get(Calendar.YEAR),
                         mCalendarCurrentDate.get(Calendar.MONTH),
                         mCalendarCurrentDate.get(Calendar.DAY_OF_MONTH));
@@ -1941,7 +1988,6 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
         c.add(Calendar.DATE, -1);  // number of days to add
 
         final DateTimeCallBack dateTimeCallBack = formElementDateTime.getCallback();
-
         dateTimeFragment.setMinimumDateTime(formElementDateTime.getMinDate());
         dateTimeFragment.setMaximumDateTime(new GregorianCalendar(2050, Calendar.DECEMBER, 31).getTime());
         try {
@@ -2004,16 +2050,31 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
 
     private void setTimePickerTextView(final TextView textView, final int position, final LinearLayout layoutRow) {
 
+        final TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                mCalendarCurrentTime.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                mCalendarCurrentTime.set(Calendar.MINUTE, minute);
+
+                String myFormatTime = "HH:mm"; // custom format
+                SimpleDateFormat sdfTime = new SimpleDateFormat(myFormatTime, Locale.getDefault());
+
+                // act only if clicked position is a valid index
+                if (position >= 0) {
+                    ((FormElementDateTime) mDataset.get(position)).setValue(mCalendarCurrentTime.getTime());
+                    notifyItemChanged(position);
+                }
+            }
+        };
+
+
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                // saves clicked position for further reference
-                clickedPosition = position;
-
                 // prepares time picker dialog
                 TimePickerDialog timePickerDialog = new TimePickerDialog(mContext,
-                        timeTextView,
+                        timeSetListener,
                         mCalendarCurrentDate.get(Calendar.HOUR_OF_DAY),
                         mCalendarCurrentDate.get(Calendar.MINUTE),
                         true);
@@ -2028,11 +2089,10 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             public void onClick(View view) {
 
                 // saves clicked position for further reference
-                clickedPosition = position;
 
                 // prepares time picker dialog
                 TimePickerDialog timePickerDialog = new TimePickerDialog(mContext,
-                        timeTextView,
+                        timeSetListener,
                         mCalendarCurrentDate.get(Calendar.HOUR_OF_DAY),
                         mCalendarCurrentDate.get(Calendar.MINUTE),
                         true);
@@ -2505,6 +2565,8 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
                 notifyItemChanged(clickedPosition);
                 clickedPosition = -1;
             }
+
+
         }
 
     };

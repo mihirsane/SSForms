@@ -17,7 +17,7 @@ ext {
     siteUrl = 'https://github.com/mihirsane/SSForms'
     gitUrl = 'https://github.com/mihirsane/SSForms.git'
 
-    libraryVersion = '1.2.0-custom'
+    libraryVersion = '1.3.0-custom'
 
 
     licenseName = 'The Apache Software License, Version 2.0'

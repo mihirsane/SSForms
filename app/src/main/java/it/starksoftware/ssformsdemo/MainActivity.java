@@ -33,6 +33,7 @@ import it.starksoftware.ssform.interfaces.ButtonCallBack;
 import it.starksoftware.ssform.interfaces.CheckBoxCallBack;
 import it.starksoftware.ssform.interfaces.DateSwitcherCallBack;
 import it.starksoftware.ssform.interfaces.DateTimeCallBack;
+import it.starksoftware.ssform.interfaces.FormElementCallBack;
 import it.starksoftware.ssform.interfaces.RatingCallBack;
 import it.starksoftware.ssform.interfaces.RatingSmileCallBack;
 import it.starksoftware.ssform.interfaces.SearchableSpinnerCallBack;
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements
         SwitchCallBack,
         CheckBoxCallBack,
         DateSwitcherCallBack,
-        RatingSmileCallBack
+        RatingSmileCallBack, FormElementCallBack
 
 {
 
@@ -89,6 +90,9 @@ public class MainActivity extends AppCompatActivity implements
     public FormElementDateTime formElementDateTime;
     public FormElementDateTime formElementDate;
     public FormElementDateTime formElementTime;
+    public FormElementDateTime formElementDateTime1;
+    public FormElementDateTime formElementDate2;
+    public FormElementDateTime formElementTime3;
     public FormElementImageMultipleView formElementImageMultipleView;
     public FormElementImageView formElementImageView;
     public FormElementMemo formElementMemo;
@@ -203,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements
                 .setMinDate(new Date())
                 .setValue(new Date())
                 .setCallback(this)
-                .setTag(52);
+                .setTag(53);
 
 
         formElementImageMultipleView = FormElementImageMultipleView.createInstance()
@@ -311,6 +315,34 @@ public class MainActivity extends AppCompatActivity implements
                 .setSmileTitleByValue(smileTitleByValue)
                 .setTag(1098);
 
+
+        formElementDateTime1 = FormElementDateTime.createInstance()
+                .setTitle("DATE TIME")
+                .setType(FormElementDateTime.TYPE_PICKER_DATE_TIME)
+                .setDetafultDate(new Date())
+                .setMinDate(new Date())
+                .setValue(new Date())
+                .setCallback(this)
+                .setTag(54);
+
+        formElementTime3 = FormElementDateTime.createInstance()
+                .setTitle("TIME")
+                .setType(FormElementDateTime.TYPE_PICKER_TIME)
+                .setDetafultDate(new Date())
+                .setMinDate(new Date())
+                .setValue(new Date())
+                .setCallback(this)
+                .setTag(55);
+
+        formElementDate2 = FormElementDateTime.createInstance()
+                .setTitle("DATE")
+                .setType(FormElementDateTime.TYPE_PICKER_DATE)
+                .setDetafultDate(new Date())
+                .setMinDate(new Date())
+                .setValue(new Date())
+                .setCallback(this)
+                .setTag(56);
+
         //formHeader = FormHeader.createInstance().setTitle("BUTTON").setTag(130);
 
         List<FormObject> formItems = new ArrayList<>();
@@ -338,6 +370,10 @@ public class MainActivity extends AppCompatActivity implements
         formItems.add(formElementSwitch);
         formItems.add(formElementCheckBox);
         formItems.add(formElementPlaceDialog);
+
+        formItems.add(formElementDateTime1);
+        formItems.add(formElementDate2);
+        formItems.add(formElementTime3);
 
         mFormBuilder.addFormElements(formItems);
         mFormBuilder.refreshView();
@@ -488,4 +524,8 @@ public class MainActivity extends AppCompatActivity implements
         showToastMessage(sMessageToast);
     }
 
+    @Override
+    public void callbackFormElement(FormElement object, Object tag) {
+
+    }
 }
