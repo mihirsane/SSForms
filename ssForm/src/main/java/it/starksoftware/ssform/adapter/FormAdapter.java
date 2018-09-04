@@ -1221,7 +1221,7 @@ public class FormAdapter extends RecyclerView.Adapter<FormAdapter.ViewHolder> {
             holder.mEditSpinnerValue.setAdapter(adapter);
             if (formElement.getValue() != null) {
                 int spinnerPosition = adapter.indexOfSpinner(formElement.getValue());
-                holder.mEditSpinnerValue.setSelection(spinnerPosition);
+                holder.mEditSpinnerValue.setSelection(spinnerPosition,true);
             }
 
             if (formElement.getRefresh())
