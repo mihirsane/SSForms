@@ -72,7 +72,7 @@
 
         <provider
             android:name="it.starksoftware.ssform.helper.ImagePickerFileProvider"
-            android:authorities="it.starksoftware.ssform.imagepicker.provider"
+            android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
